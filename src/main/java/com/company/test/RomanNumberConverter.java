@@ -34,27 +34,16 @@ public class RomanNumberConverter {
 
             if (i + 1 < romNumbers.length) {
                 nextNr = hardcoded.get(getAndValidateRomanNrLetter(romNumbers[i + 1]));
-                System.err.println("currentNr " + currentNr + " nextNr " + nextNr );
-
                 if (currentNr >= nextNr) {
-//                    if (i + 2 < romNumbers.length) {
-//                        Integer nextNextNr = hardcoded.get(getAndValidateRomanNrLetter(romNumbers[i + 2]));
-//                        System.err.println("currentNr " + currentNr + " nextNr " + nextNr + " nextNextNr " + nextNextNr);
-//                        if (nextNr < nextNextNr) {
-//                            result -= currentNr;
-//                        }
-//                    }
                     result += currentNr;
                 } else {
                     result += (nextNr - currentNr);
-                    System.err.println("result " + result);
                     i++;
                 }
             } else {
                 result += currentNr;
             }
 
-            System.err.println("result " + result);
         }
 
         return result;
